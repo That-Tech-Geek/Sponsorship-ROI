@@ -51,9 +51,9 @@ if st.button("Generate Report"):
     Mention key insights and recommendations based on these numbers.
     """
     response = co.generate(
-        model='xlarge',
+        model='command',
         prompt=prompt_text,
-        max_tokens=150,
+        max_tokens=150000000000,
         temperature=0.7,
     )
     summary_report = response.generations[0].text.strip()
