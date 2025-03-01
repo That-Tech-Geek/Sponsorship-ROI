@@ -39,7 +39,6 @@ st.markdown("""
 - **Additional KPIs:** Metrics like social media impressions, website visits, and media mentions help quantify the broader impact on brand awareness.
 """)
 
-# Cohere Integration: Generate a Summary Report using AI
 st.header("Generate Summary Report")
 if st.button("Generate Report"):
     prompt_text = f"""
@@ -50,10 +49,12 @@ if st.button("Generate Report"):
     The brand sentiment score is {brand_sentiment} out of 10.
     Mention key insights and recommendations based on these numbers.
     """
+
+    co = cohere.Client(st.secrets["COHERE_API_KEY"])  # Replace with your actual API key
     response = co.generate(
         model='command',
         prompt=prompt_text,
-        max_tokens=150000000000,
+        max_tokens=150,  # Adjust the maximum number of tokens to generate
         temperature=0.7,
     )
     summary_report = response.generations[0].text.strip()
