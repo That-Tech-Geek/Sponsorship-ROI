@@ -60,10 +60,3 @@ if st.button("Generate Report"):
     summary_report = response.generations[0].text.strip()
     st.subheader("Summary Report")
     st.write(summary_report)
-
-st.markdown("""
-### Next Steps:
-- **Refinement:** Integrate additional data sources and KPIs to further refine your ROI calculations.
-- **Comparison:** Use this tool to compare different sponsorship opportunities or track changes over time.
-- **Feedback:** Gather post-event feedback to correlate these numbers with actual market impact.
-""")
