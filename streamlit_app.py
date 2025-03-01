@@ -54,7 +54,7 @@ if st.button("Generate Report"):
     response = co.generate(
         model='command',
         prompt=prompt_text,
-        max_tokens=150,  # Adjust the maximum number of tokens to generate
+        max_tokens=150000,  # Adjust the maximum number of tokens to generate
         temperature=0.7,
     )
     summary_report = response.generations[0].text.strip()
